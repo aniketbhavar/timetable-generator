@@ -1,0 +1,30 @@
+<!-- templates/timetable.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Timetable</title>
+</head>
+<body>
+    <h2>Generated Timetable</h2>
+    <table border="1">
+        <tr>
+            <th>Time Slot</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <!-- Add more days as needed -->
+        </tr>
+        {% for slot in timetable %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                {% for course in slot %}
+                    <td>{{ course }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
